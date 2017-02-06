@@ -103,4 +103,89 @@ test_dict = {
 "user" in tweet
 "joelgrus" in tweet.values()
 
+document = ['hej']
+word_counts = {}
+for word in document:
+    if word in word_counts:
+        word_counts[word] += 1
+    else:
+        word_counts[word] = 1
+
+for word in document:
+   previous_count = word_counts.get(word, 0)
+   word_counts[word] = previous_count + 1
+
+from collections import defaultdict
+
+word_counts = defaultdict(int)
+for word in document:
+    word_counts[word] += 1
+
+dd_list = defaultdict(list)
+dd_list[2].append(1)
+
+dd_dict = defaultdict(dict)
+dd_dict["Joel"]["City"] = "Seattle" # dict() produces an empty dict
+# { "Joel" : { "City" : Seattle"}}
+dd_pair = defaultdict(lambda: [0, 0])
+dd_pair[2][1] = 1 # now dd_pair contains {2: [0,1]}
+
+from collections import Counter
+
+c = Counter([0, 1, 2, 0])
+document = ['hej', 'da','da','haja']
+word_counts = Counter(document)
+
+for word, count in word_counts.most_common(10):
+    print word, count
+
+s = set()
+s.add(1)
+s.add(2)
+s.add(2)
+
+item_list = [1,2,3,1,2,3]
+num_items = len(item_list)
+item_set = set(item_list)
+
+x = 2
+parity = "even" if x % 2 == 0 else "odd"
+
+#for x in range(10):
+    #print x, "is less than 10"
+
+for x in range(10):
+    if x == 3:
+        continue
+    if x == 5:
+        break
+    print x
+
+x = None
+y = "Something"
+print x == None
+print x is None
+print y is "Something"
+
+def some_function_that_returns_a_string():
+    return "a string"
+
+s = some_function_that_returns_a_string()
+if s:
+    first_char = s[0]
+else:
+    first_char = ''
+
+first_char = s and s[0]
+
+safe_x = x or 0
+
+all([True, 1, {3}])
+all([True, 1, {}])
+any([True, 1, {}])
+all([])
+any([])
+
+
+
 
